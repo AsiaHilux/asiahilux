@@ -1,0 +1,112 @@
+.list-blog-row {
+    margin-bottom: 20px;
+}
+.list-blog-img img{
+	width:100%;
+	height:auto;
+}
+.post-meta .author {
+    float: left;
+    margin-right: 10px;
+	text-transform:capitalize;
+}
+.post-meta span{
+    color: #f7931e;
+}
+.blog-title h4 {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.blog-title h4 a {
+    color: #000000;
+}
+.post-desc {
+    margin: 8px 0px 5px;
+}
+.post-meta {
+    font-size: 14px;
+	color:#a0a0a0;
+}
+.post-desc p {
+    font-size: 14px;
+}
+.blog-detail-page .blog-title {
+    margin-top: 15px;
+}
+.blog-detail-page ol {
+    padding-left: 15px;
+}
+.mt-120{
+	margin-top:120px;
+}
+/*.drop-down ul.sub-menu {
+    FONT-WEIGHT: 100;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+	visibility:hidden;
+}
+.drop-down:hover ul.sub-menu {
+    visibility:visible;
+}
+.drop-down ul.sub-menu li ul.sub-menu {
+    width: 33%;
+    position: relative;
+    float: left;
+}
+.cat-dropdown ul.sub-menu li {
+    display: block;
+}*/
+
+#mega-menu-wrap-top_menu {
+    background: none;
+}
+#mega-menu-wrap-top_menu #mega-menu-top_menu > li.mega-menu-item > a.mega-menu-link {
+    line-height: 45px;
+    height: 49px;
+}
+#mega-menu-wrap-top_menu #mega-menu-top_menu > li.mega-menu-item > a.mega-menu-link:hover {
+    background: none !important;
+}
+#mega-menu-wrap-top_menu #mega-menu-top_menu > li.mega-menu-flyout ul.mega-sub-menu li.mega-menu-item a.mega-menu-link {
+	background: #ffffff !important;
+}
+.header-content-right .form-control {
+    width: 160px;
+    float: right;
+    padding: 5px;
+    height: 30px;
+    margin-right: -2px;
+    padding-top: 4px;
+    border-color: #e2e2e2;
+    color: #000;
+}
+ul.custom-menu-list b {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: table;
+    width: 100%;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #2f3292;
+}
+#mega-menu-wrap-top_menu #mega-menu-top_menu li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-row .mega-menu-column > ul.mega-sub-menu > li.mega-menu-item {
+    padding: 0px 0px 0px 0px !important;
+}
+li#mega-menu-item-88 .mega-sub-menu {
+    padding-left: 2.3% !important;
+    padding-right: 2.3% !important;
+	padding-top: 2px !important;
+}
+.right-sidebar {
+    width: 21% !important;
+    max-width: 21% !important;
+}
+.w-80 {
+    width: 79% !important;
+    max-width: 79% !important;
+    min-width: 79% !important;
+}

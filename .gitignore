@@ -15,3 +15,9 @@ application/logs/*
 !application/logs/index.html
 !application/logs/.htaccess
 /vendor/
+asiahilux_admin
+application/config/database
+application/config/config
+uploads
+database_backup
+customerPortal
