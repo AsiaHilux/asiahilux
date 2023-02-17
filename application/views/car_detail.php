@@ -661,7 +661,7 @@ $ip_country = !empty($details->country) ? $details->country : '';
                                 <div class="col-lg-12 p-0">
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <button type="submit" id="form-submit" class="btn btn-primary mt-2 mb-3" style="width:100%;">Send Inquiry <br><span><small>(<?php echo count($inquiry); ?> people are inquiring)</small></span></button>
+                                            <button type="submit" id="form-submit" onclick="executeLoader();" class="btn btn-primary mt-2 mb-3" style="width:100%;">Send Inquiry <br><span><small>(<?php echo count($inquiry); ?> people are inquiring)</small></span></button>
 
                                             <a href="https://api.whatsapp.com/send/?phone=66633031732&amp;text&amp;app_absent=0" target="_blank">
                                                 <button type="button" class="btn" style="width:100%;background-color: #01e675;">
