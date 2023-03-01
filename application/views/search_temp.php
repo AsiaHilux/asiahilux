@@ -29,7 +29,6 @@ $csrf = array(
                         <div class="d-flex justify-content-between align-items-center">
                             <h6>
                                 <?php
-
                                 $string =  $_SERVER['REQUEST_URI'];
                                 $url1 = str_replace("-", " ", $string);
                                 $url = str_replace("%20", " ", $url1);
@@ -39,7 +38,6 @@ $csrf = array(
                             </h6>
                             <ol>
                                 <li><a href="<?= base_url(); ?>">Home</a><?= $cap_first_word; ?></li>
-                                <!-- <li><?php //$cap_first_word; ?></li> -->
                             </ol>
                         </div>
                     </section>
