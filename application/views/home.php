@@ -124,10 +124,7 @@ $current_year = date('Y');
                                     <a href="<?php echo $url; ?>">
                                         <div class="grid-item">
                                             <div class="item-img">
-                                                <?php
-                                                $img = base_url("asiahilux_admin/storage/app/images/car_images/" . $car["car_d_id"] .'/' . $car["stored_file_name"]);
-                                                
-                                                ?>
+                                                <?php $img = base_url("asiahilux_admin/storage/app/images/car_images/" . $car["car_d_id"] . '/' . $car["stored_file_name"]); ?>
                                                 <img src="<?php echo $img; ?>" class="img-fluid" alt="Asia Hilux Car Thumbnail Image" />
                                             </div>
                                             <div class="item-desc">
@@ -181,8 +178,8 @@ $current_year = date('Y');
                                             <div class="item-img">
 
                                                 <?php
-                                               $img = base_url("asiahilux_admin/storage/app/images/car_images/" . $disCar["car_d_id"] .'/' . $disCar["stored_file_name"]);
-                                                
+                                                $img = base_url("asiahilux_admin/storage/app/images/car_images/" . $disCar["car_d_id"] . '/' . $disCar["stored_file_name"]);
+
                                                 ?>
                                                 <img src="<?= $img; ?>" class="img-fluid" alt="Asia Hilux Car Thumbnail Image" />
                                             </div>
@@ -253,8 +250,8 @@ $current_year = date('Y');
                                             <div class="item-img">
 
                                                 <?php
-                                                $img = base_url("asiahilux_admin/storage/app/images/car_images/" . $car["car_d_id"] .'/' . $car["stored_file_name"]);
-                                                
+                                                $img = base_url("asiahilux_admin/storage/app/images/car_images/" . $car["car_d_id"] . '/' . $car["stored_file_name"]);
+
                                                 ?>
                                                 <img src="<?= $img; ?>" class="img-fluid" alt="Asia Hilux Car Thumbnail Image" />
                                             </div>
@@ -280,12 +277,12 @@ $current_year = date('Y');
                         </div>
                         <div class="photo-gallery-inner">
                             <div class="row">
-                                <?php 
+                                <?php
                                 $count = 0;
-                                foreach ($get_all_car_image as $row) { 
-                                    $img = base_url("asiahilux_admin/storage/app/images/car_images/" . $row["car_d_id"] .'/' . $row["stored_file_name"]);
-                                    
-                                    ?>
+                                foreach ($get_all_car_image as $row) {
+                                    $img = base_url("asiahilux_admin/storage/app/images/car_images/" . $row["car_d_id"] . '/' . $row["stored_file_name"]);
+
+                                ?>
                                     <a href="<?= $img; ?>" data-toggle="lightbox" data-gallery="gallery" class="col-md-3 col-sm-6">
                                         <img src="<?= $img; ?>" class="img-fluid">
                                     </a>

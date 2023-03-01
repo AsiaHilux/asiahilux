@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 //https://horizonvehicles.com/horizonadmin/backend
 // $config['base_url'] = 'https://asiahilux.com/';
-$config['base_url'] = 'https://localhost/Karachi/asiahilux/';
+$config['base_url'] = 'https://localhost/asiahilux/';
 
 
 /*

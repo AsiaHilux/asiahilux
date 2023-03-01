@@ -56,7 +56,7 @@ $ip_country = !empty($details->country) ? $details->country : '';
                                             } else {
                                                 $imgs = "No-image-found.jpg";
                                             } ?>
-                                            <img src="<?php echo base_url("asiahilux_admin/storage/app/images/car_images/" . $imgs); ?>" class="d-block w-100" alt="<?php echo $imgs ?>" data-remote="<?php echo base_url(); ?>/uploads/<?php echo $imgs ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery" />
+                                            <img src="<?php echo base_url("asiahilux_admin/storage/app/images/car_images/" . $imgs); ?>" class="d-block w-100" alt="<?php echo $imgs ?>" data-remote="<?php echo base_url("asiahilux_admin/storage/app/images/car_images/" . $imgs); ?>" data-type="image" data-toggle="lightbox" data-gallery="example-gallery" />
                                         </div>
                                     <?php $no++;
                                     } ?>
@@ -98,7 +98,7 @@ $ip_country = !empty($details->country) ? $details->country : '';
                                                         $imgs = "No-image-found.jpg";
                                                     } ?>
                                                     <div id="carousel-selector-<?php echo $images['s_no']; ?>" class="col-2 col-sm-2 px-1 py-2 <?php echo $selected; ?>" data-target="#myCarousel" data-slide-to="<?php echo $images['s_no']; ?>">
-                                                        <img src="<?php echo base_url(); ?>/uploads/<?php echo $imgs ?>" class="img-fluid" alt="..." />
+                                                        <img src="<?php echo base_url("asiahilux_admin/storage/app/images/car_images/" . $imgs); ?>" class="img-fluid" alt="..." />
                                                     </div>
                                                 <?php $s_no++;
                                                 } ?>
@@ -554,7 +554,7 @@ $ip_country = !empty($details->country) ? $details->country : '';
 
             <div class="col-md-7 col-sm-7">
                 <div class="detail-page-right-side">
-                    <form action="<?php echo base_url() ?>send-inquiry" method="post">
+                    <form action="<?php echo base_url() ?>send-inquiry" method="post" id="inquiryForm">
                         <div class="card mb-3">
                             <div class="card-header"><span>Total Price Calculator</span></div>
                             <div class="card-body">
@@ -580,7 +580,7 @@ $ip_country = !empty($details->country) ? $details->country : '';
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td colspan="2">Destination Country</td>
+                                                <td colspan="2">Destination Country <span class="red-text">*</span></td>
                                                 <td>
                                                     <select name="country" required class="form-control" id="country_list">
                                                         <option value="">Select Your Country*</option>
@@ -661,7 +661,7 @@ $ip_country = !empty($details->country) ? $details->country : '';
                                 <div class="col-lg-12 p-0">
                                     <div class="row">
                                         <div class="col-md-9">
-                                            <button type="submit" id="form-submit" onclick="executeLoader();" class="btn btn-primary mt-2 mb-3" style="width:100%;">Send Inquiry <br><span><small>(<?php echo count($inquiry); ?> people are inquiring)</small></span></button>
+                                            <button type="button" id="form-submit" onclick="submitForm();" class="btn btn-primary mt-2 mb-3" style="width:100%;">Send Inquiry <br><span><small>(<?php echo count($inquiry); ?> people are inquiring)</small></span></button>
 
                                             <a href="https://api.whatsapp.com/send/?phone=66633031732&amp;text&amp;app_absent=0" target="_blank">
                                                 <button type="button" class="btn" style="width:100%;background-color: #01e675;">
@@ -700,6 +700,45 @@ $ip_country = !empty($details->country) ? $details->country : '';
 
 
 <script type="text/javascript">
+    function submitForm() {
+        let required = 1;
+        let fields = $('#inquiryForm').find('.form-control');
+        $.each(fields, function(indexInArray, field) {
+            if ($(field).prop('required')) {
+                if (!$(field).val() || $(field).val() == '' || $(field).val() == null) {
+                    required = 0;
+
+                    $(field).css('border', '1px solid red');
+
+                } else {
+                    $(field).css('border', '1px solid #e2e5ec');
+                }
+            }
+        });
+        if (required == 1) {
+            if (grecaptcha.getResponse() == "") {
+                alert("Please check the recapcha box!");
+            } else {
+                executeLoader();
+                $.ajax({
+                    type: "POST",
+                    url: "<?= base_url('send-inquiry'); ?>",
+                    data: $('#inquiryForm').serialize(),
+                    dataType: "json",
+                    success: function(response) {
+                        window.location.reload();
+                    }
+                });
+            }
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Please fill all the required fields!'
+            })
+        }
+    }
+
     $(document).ready(function() {
         <?php if ($this->session->flashdata('success')) { ?>
             $('.alert-success').html('<?php echo $this->session->flashdata('success'); ?>').show();

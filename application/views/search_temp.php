@@ -32,14 +32,14 @@ $csrf = array(
 
                                 $string =  $_SERVER['REQUEST_URI'];
                                 $url1 = str_replace("-", " ", $string);
-                                $url = str_replace("/", " ", $url1);
+                                $url = str_replace("%20", " ", $url1);
                                 $cap_first_word =  ucwords($url);
                                 echo $cap_first_word;
                                 ?>
                             </h6>
                             <ol>
-                                <li><a href="<?= base_url(); ?>">Home</a></li>
-                                <li><?= $cap_first_word; ?></li>
+                                <li><a href="<?= base_url(); ?>">Home</a><?= $cap_first_word; ?></li>
+                                <!-- <li><?php //$cap_first_word; ?></li> -->
                             </ol>
                         </div>
                     </section>

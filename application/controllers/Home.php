@@ -543,7 +543,7 @@ class Home extends CI_Controller
         $mail->Host     = 'emails.asiahilux.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'info@emails.asiahilux.com';
-        $mail->Password = 'Abcd12345@@##$$';
+        $mail->Password = '6Krt_8~mZ*9g';
         $mail->SMTPSecure = 'ssl';
         $mail->Port     = 465;
 
@@ -648,7 +648,7 @@ class Home extends CI_Controller
                 $mail->Host     = 'emails.asiahilux.com';
                 $mail->SMTPAuth = true;
                 $mail->Username = 'info@emails.asiahilux.com';
-                $mail->Password = 'Abcd12345@@##$$';
+                $mail->Password = '6Krt_8~mZ*9g';
                 $mail->SMTPSecure = 'ssl';
                 $mail->Port     = 465;
 
@@ -689,7 +689,8 @@ class Home extends CI_Controller
         } else {
             $this->session->set_flashdata('error', 'Incorrect/Invalid Capcha!');
         }
-        redirect(base_url($redirect));
+        echo true;
+        // redirect(base_url($redirect));
     }
 
     function CheckCaptcha($userResponse)
@@ -793,7 +794,7 @@ class Home extends CI_Controller
         $mail->Host     = 'emails.asiahilux.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'info@emails.asiahilux.com';
-        $mail->Password = 'Abcd12345@@##$$';
+        $mail->Password = '6Krt_8~mZ*9g';
         $mail->SMTPSecure = 'ssl';
         $mail->Port     = 465;
 
