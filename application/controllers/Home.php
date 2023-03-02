@@ -347,6 +347,7 @@ class Home extends CI_Controller
         
         if ($data['country'] == true) {
             $arr['country_id'] = $data['country']['country_id'];
+            $arr['remove_country_active'] = 1;
             $data['get_selected_cars'] = $this->Home_model->filter($arr);
             $data['countrys'] = $this->Home_model->get_hv_port_country();
             $this->load->view('header', $data);

@@ -628,6 +628,7 @@ class Home_model extends CI_Model
 		$car_tag = !empty($arr['car_tag']) ? $arr['car_tag'] : '';
 		$country_id = !empty($arr['country_id']) ? $arr['country_id'] : '';
 		$wheel_type = !empty($arr['wheel_type']) ? $arr['wheel_type'] : '';
+		$remove_country_active = !empty($arr['remove_country_active']) ? 1 : 0;
 
 		$this->db->select('hv_car_details.car_d_id, hv_car_details.VehicleNo, hv_car_details.ManufactureYear, hv_car_details.RegistrationYear, hv_car_details.carprice, hv_car_details.Mileage, hv_car_details.EngineSize, hv_car_details.Transmission, hv_car_manufacturer.vm_name, hv_car_models.model_name, hv_car_bodytype_details.*,images.stored_file_name,images.file_path');
 		$this->db->join('hv_car_manufacturer', 'hv_car_manufacturer.vm_id = hv_car_details.vm_id', 'left');
@@ -640,9 +641,11 @@ class Home_model extends CI_Model
 		$this->db->where('hv_car_manufacturer.active', 1);
 		$this->db->where('hv_car_models.active', 1);
 		$this->db->where('hv_car_bodytype.active', 1);
-		$this->db->where('si_countries.active', 1);
 		$this->db->where('hv_car_details.is_active', 1);
 		$this->db->where('hv_car_details.is_trash', 0);
+		if (empty($remove_country_active)) {
+			$this->db->where('si_countries.active', 1);
+		}
 		if (!empty($clearance_sale)) {
 			$this->db->where('hv_car_details.car_tag', $clearance_sale);
 		}
